@@ -1,0 +1,17 @@
+.text-bg-primary{
+    background-color: #002F7B !important;
+}
+
+.text-white{
+    color: #AFEB8F !important;
+}
+
+.nav-link:hover{
+    color: #2B7F44 !important;
+}
+
+.nav-link.active{
+    background-color: #AFEB8F !important;
+    color: #002F7B !important;
+    border-radius: 10px;
+}
