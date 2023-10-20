@@ -14,8 +14,8 @@ app.use(helmet({
         useDefaults: true,
         directives: {
           defaultSrc: ["'self'"],
-          scriptSrc: ["'self'","cdn.jsdelivr.net", "cdnjs.cloudflare.com"],
-          imgSrc: ["'self'"],
+          scriptSrc: ["'self'","cdn.jsdelivr.net", "cdnjs.cloudflare.com", "www.w3.org", "www.google-analytics.com"],
+          imgSrc: ["'self'", "www.w3.org", "www.google-analytics.com"],
         },
       },
 }));

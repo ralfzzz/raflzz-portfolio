@@ -15,3 +15,12 @@
     color: #002F7B !important;
     border-radius: 10px;
 }
+
+.header .navbar{
+    background-color: #002F7B !important;
+}
+
+.navbar-toggler{
+    margin-bottom: 5px;
+    border: 2px solid #AFEB8F;
+}
