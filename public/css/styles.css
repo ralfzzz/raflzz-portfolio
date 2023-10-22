@@ -2,7 +2,7 @@
     background-color: #002F7B !important;
 }
 
-.text-white{
+.text-white, footer{
     color: #AFEB8F !important;
 }
 
@@ -16,7 +16,7 @@
     border-radius: 10px;
 }
 
-.header .navbar{
+.header .navbar, .footer{
     background-color: #002F7B !important;
 }
 
@@ -24,3 +24,15 @@
     margin-bottom: 5px;
     border: 2px solid #AFEB8F;
 }
+i{
+    color: #AFEB8F;
+}
+
+.border-bottom{
+    border-bottom-color: #AFEB8F !important;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(-45deg,#002F7Bb3, #EBAA8Fb3); 
+  }
