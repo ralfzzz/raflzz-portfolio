@@ -8,7 +8,7 @@ const helmet = require("helmet");
 const app = express();
 const port = process.env.PORT;
 app.use(express.static('public'));
-app.set("views", "views");
+app.set('views','views');
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(helmet({
     contentSecurityPolicy: {
@@ -38,6 +38,32 @@ mongoose.connect(process.env.URI_MONGODB) // if error it will throw async error
 
 app.get('/',(req,res)=>{
     res.render("main/main.ejs",{
-        year: year
+        year: year,
+        title: "About Me",
+        page: '../index.ejs'
+    })
+})
+
+app.get('/',(req,res)=>{
+    res.render("main/main.ejs",{
+        year: year,
+        title: "About Me",
+        page: '../index.ejs'
+    })
+})
+
+app.get('/projects',(req,res)=>{
+    res.render("main/main.ejs",{
+        year: year,
+        title: "Projects",
+        page: '../projects.ejs'
+    })
+})
+
+app.get('/works',(req,res)=>{
+    res.render("main/main.ejs",{
+        year: year,
+        title: "Works",
+        page: '../works.ejs'
     })
 })

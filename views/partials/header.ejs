@@ -22,33 +22,44 @@
         id="navbarsExample10"
       >
         <ul
-          class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small"
+          class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small gap-md-3"
         >
           <li>
-            <a href="/" class="nav-link active text-white text-center">
+            <a href="/" class="nav-link <%= (title=="About Me")?'active':'' %> text-white text-center">
               <i
-                class="fa-solid fa-user-secret fa-flip fa-lg d-block mx-auto my-2"
-                style="color: #002f7b"
+                class="fa-solid fa-user-secret <%= (title=="About Me")?'fa-flip':'' %> fa-lg d-block mx-auto my-2"
+                <% if (title=="About Me") { %>
+                  style="color: #002F7B"
+                <% } else { %>
+                  style="color: #afeb8f"
+                <% } %>
               ></i>
               About Me
             </a>
           </li>
           <li>
-            <a href="/" class="nav-link text-white text-center">
+            <a href="/projects" class="nav-link text-white text-center <%= (title=="Projects")?'active':'' %>">
               <i
-                class="fa-solid fa-cubes fa-lg d-block mx-auto my-2"
-                style="color: #afeb8f"
+                class="fa-solid fa-cubes fa-lg d-block mx-auto my-2 <%= (title=="Projects")?'fa-flip':'' %>"
+                <% if (title=="Projects") { %>
+                  style="color: #002F7B"
+                <% } else { %>
+                  style="color: #afeb8f"
+                <% } %>
               ></i>
               Projects
             </a>
           </li>
           <li>
-            <a href="/" class="nav-link text-white text-center">
+            <a href="/works" class="nav-link text-white text-center <%= (title=="Works")?'active':'' %>">
               <i
-                class="fa-solid fa-briefcase fa-lg d-block mx-auto my-2"
-                style="color: #afeb8f"
+                class="fa-solid fa-briefcase fa-lg d-block mx-auto my-2 <%= (title=="Works")?'fa-flip':'' %>"
+                <% if (title=="Works") { %>
+                  style="color: #002F7B"
+                <% } else { %>
+                  style="color: #afeb8f"
+                <% } %>
               ></i>
-
               Works
             </a>
           </li>
