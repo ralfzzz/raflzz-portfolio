@@ -32,7 +32,23 @@ i{
     border-bottom-color: #AFEB8F !important;
 }
 
-body {
+/* body {
     height: 100vh;
-    background: linear-gradient(-45deg,#002F7Bb3, #EBAA8Fb3); 
-  }
+    background: linear-gradient(-45deg,#002F7Bb3, #002F7Bb3); 
+  } */
+
+body{
+    background-color: #002F7B;
+}
+
+.card-styles{
+    background-color: #AFEB8F;
+    border: 2px solid #002F7B;
+    border-radius: 10px;
+    color: #002F7B !important;
+
+}
+
+.header-styles{
+    color: #002F7B !important;
+}

@@ -8,6 +8,7 @@ const helmet = require("helmet");
 const app = express();
 const port = process.env.PORT;
 app.use(express.static('public'));
+app.set("views", "views");
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(helmet({
     contentSecurityPolicy: {
@@ -19,6 +20,9 @@ app.use(helmet({
         },
       },
 }));
+
+const d = new Date();
+let year = d.getFullYear();
 
 
 mongoose.connect(process.env.URI_MONGODB) // if error it will throw async error
@@ -33,5 +37,7 @@ mongoose.connect(process.env.URI_MONGODB) // if error it will throw async error
     });
 
 app.get('/',(req,res)=>{
-    res.render("main/main.ejs")
+    res.render("main/main.ejs",{
+        year: year
+    })
 })
