@@ -44,14 +44,6 @@ app.get('/',(req,res)=>{
     })
 })
 
-app.get('/',(req,res)=>{
-    res.render("main/main.ejs",{
-        year: year,
-        title: "About Me",
-        page: '../index.ejs'
-    })
-})
-
 app.get('/projects',(req,res)=>{
     res.render("main/main.ejs",{
         year: year,
@@ -65,5 +57,51 @@ app.get('/works',(req,res)=>{
         year: year,
         title: "Works",
         page: '../works.ejs'
+    })
+})
+
+
+// MONGODB
+const dataSchema = new mongoose.Schema({
+    periode: {
+        type: String,
+      },
+      title: {
+        type: String,
+      },
+      position: {
+        type: String,
+      },
+      project: {
+        type: String,
+      }, 
+      skills: {
+        type: String,
+      },
+      link:{
+        type: String,
+      }
+});
+
+const portfolioSchema = new mongoose.Schema({
+    category: {
+        type: String,
+      },
+      data: [dataSchema]
+});
+const Portfolio = mongoose.model('portfolio', portfolioSchema);
+
+app.get("/show/:tab", (req,res) => {
+    // let tab = req.params.tab;
+    // let category = _.capitalize(tab);
+
+    // const data = await Portfolio.findOne({category: category}).catch(error => {
+    //     console.log(error);
+    // });
+    res.render("main/main.ejs",{
+        year: year,
+        title: 'category',
+        page: '../works.ejs',
+        // datas: data
     })
 })
