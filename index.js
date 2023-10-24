@@ -91,17 +91,17 @@ const portfolioSchema = new mongoose.Schema({
 });
 const Portfolio = mongoose.model('portfolio', portfolioSchema);
 
-app.get("/show/:tab", (req,res) => {
-    // let tab = req.params.tab;
-    // let category = _.capitalize(tab);
+app.get("/show/:tab", async (req,res) => {
+    let tab = req.params.tab;
+    let category = _.capitalize(tab);
 
-    // const data = await Portfolio.findOne({category: category}).catch(error => {
-    //     console.log(error);
-    // });
+    const data = await Portfolio.findOne({category: category}).catch(error => {
+        console.log(error);
+    });
     res.render("main/main.ejs",{
         year: year,
-        title: 'category',
+        title: category,
         page: '../works.ejs',
-        // datas: data
+        datas: data
     })
 })
