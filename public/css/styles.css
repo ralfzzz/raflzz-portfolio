@@ -1,8 +1,12 @@
+*, h4{
+    color: white;
+}
+
 .text-bg-primary{
     background-color: #002F7B !important;
 }
 
-.text-white, footer{
+.text-white, footer, h1{
     color: #AFEB8F !important;
 }
 
@@ -41,14 +45,44 @@ body{
     background-color: #002F7B;
 }
 
-.card-styles{
+.box-styles{
     background-color: #AFEB8F;
     border: 2px solid #002F7B;
     border-radius: 10px;
     color: #002F7B !important;
-
 }
 
 .header-styles{
     color: #002F7B !important;
 }
+
+.content {
+	background: linear-gradient(-75deg, #457ACF , #FA8E7D, #AFEB8F, #002F7B);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.card{
+    background-color: #002F7B;
+}
+
+@media screen and (min-width: 768px) {
+    /* Tambahkan gaya CSS yang ingin Anda terapkan pada layar lebar di sini */
+    .card{
+        background-color: #002F7B;
+        min-height: 400px;
+    }
+  }
+  
