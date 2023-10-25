@@ -44,6 +44,14 @@ app.get('/',(req,res)=>{
     })
 })
 
+app.get('/skills',(req,res)=>{
+  res.render("main/main.ejs",{
+      year: year,
+      title: "Skills",
+      page: '../skills.ejs'
+  })
+})
+
 // MONGODB
 const dataSchema = new mongoose.Schema({
     periode: {
@@ -95,8 +103,10 @@ app.get('/:tab', async (req,res)=>{
             page: '../content.ejs',
             content: data
         })
+    } else if(data==null && category=="Skills") {
+      res.redirect("/skills");
     } else {
-        res.redirect("/")
+      res.redirect("/");
     }
 })
 

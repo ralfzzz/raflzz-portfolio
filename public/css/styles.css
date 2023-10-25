@@ -6,7 +6,7 @@
     background-color: #002F7B !important;
 }
 
-.text-white, footer, h1{
+.text-white, footer, h1, h2, h3{
     color: #AFEB8F !important;
 }
 
@@ -85,4 +85,11 @@ body{
         min-height: 400px;
     }
   }
+
+.skills-styles{
+    background-color: #002F7B;
+    border: 2px solid #AFEB8F;
+    border-radius: 10px;
+    color: #AFEB8F !important;
+}
   
