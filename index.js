@@ -44,23 +44,6 @@ app.get('/',(req,res)=>{
     })
 })
 
-app.get('/projects',(req,res)=>{
-    res.render("main/main.ejs",{
-        year: year,
-        title: "Projects",
-        page: '../projects.ejs'
-    })
-})
-
-app.get('/works',(req,res)=>{
-    res.render("main/main.ejs",{
-        year: year,
-        title: "Works",
-        page: '../works.ejs'
-    })
-})
-
-
 // MONGODB
 const dataSchema = new mongoose.Schema({
     periode: {
@@ -75,7 +58,13 @@ const dataSchema = new mongoose.Schema({
       project: {
         type: String,
       }, 
+      topics: {
+        type: String,
+      },
       skills: {
+        type: String,
+      },
+      activity: {
         type: String,
       },
       link:{
@@ -91,17 +80,24 @@ const portfolioSchema = new mongoose.Schema({
 });
 const Portfolio = mongoose.model('portfolio', portfolioSchema);
 
-app.get("/show/:tab", async (req,res) => {
+app.get('/:tab', async (req,res)=>{
     let tab = req.params.tab;
     let category = _.capitalize(tab);
 
     const data = await Portfolio.findOne({category: category}).catch(error => {
         console.log(error);
     });
-    res.render("main/main.ejs",{
-        year: year,
-        title: category,
-        page: '../works.ejs',
-        datas: data
-    })
+    console.log(data)
+    if (data!==null) {
+        res.render("main/main.ejs",{
+            year: year,
+            title: category,
+            page: '../content.ejs',
+            content: data
+        })
+    } else {
+        res.redirect("/")
+    }
 })
+
+

@@ -64,46 +64,66 @@
             </a>
           </li>
           <li>
-            <a href="/" class="nav-link text-white text-center">
+            <a href="/educations" class="nav-link text-white text-center <%= (title=="Educations")?'active':'' %>">
               <i
-                class="fa-solid fa-graduation-cap fa-lg d-block mx-auto my-2"
-                style="color: #afeb8f"
+                class="fa-solid fa-graduation-cap fa-lg d-block mx-auto my-2 <%= (title=="Educations")?'fa-flip':'' %>"
+                <% if (title=="Educations") { %>
+                  style="color: #002F7B"
+                <% } else { %>
+                  style="color: #afeb8f"
+                <% } %>
               ></i>
               Educations
             </a>
           </li>
           <li>
-            <a href="/" class="nav-link text-white text-center">
+            <a href="/certifications" class="nav-link text-white text-center <%= (title=="Certifications")?'active':'' %>">
               <i
-                class="fa-solid fa-newspaper fa-lg d-block mx-auto my-2"
-                style="color: #afeb8f"
+                class="fa-solid fa-newspaper fa-lg d-block mx-auto my-2 <%= (title=="Certifications")?'fa-flip':'' %>"
+                <% if (title=="Certifications") { %>
+                  style="color: #002F7B"
+                <% } else { %>
+                  style="color: #afeb8f"
+                <% } %>
               ></i>
               Certifications
             </a>
           </li>
           <li>
-            <a href="/" class="nav-link text-white text-center">
+            <a href="/publications" class="nav-link text-white text-center <%= (title=="Publications")?'active':'' %>">
               <i
-                class="fa-solid fa-book-open fa-lg d-block mx-auto my-2"
-                style="color: #afeb8f"
+                class="fa-solid fa-book-open fa-lg d-block mx-auto my-2 <%= (title=="Publications")?'fa-flip':'' %>"
+                <% if (title=="Publications") { %>
+                  style="color: #002F7B"
+                <% } else { %>
+                  style="color: #afeb8f"
+                <% } %>
               ></i>
               Publications
             </a>
           </li>
           <li>
-            <a href="/" class="nav-link text-white text-center">
+            <a href="/community" class="nav-link text-white text-center <%= (title=="Community")?'active':'' %>">
               <i
-                class="fa-solid fa-people-group fa-lg d-block mx-auto my-2"
-                style="color: #afeb8f"
+                class="fa-solid fa-people-group fa-lg d-block mx-auto my-2 <%= (title=="Community")?'fa-flip':'' %>"
+                <% if (title=="Community") { %>
+                  style="color: #002F7B"
+                <% } else { %>
+                  style="color: #afeb8f"
+                <% } %>
               ></i>
               Community
             </a>
           </li>
           <li>
-            <a href="/" class="nav-link text-white text-center">
+            <a href="/skills" class="nav-link text-white text-center <%= (title=="Skills")?'active':'' %>">
               <i
-                class="fa-solid fa-circle-nodes fa-lg d-block mx-auto my-2"
-                style="color: #afeb8f"
+                class="fa-solid fa-circle-nodes fa-lg d-block mx-auto my-2 <%= (title=="Skills")?'fa-flip':'' %>"
+                <% if (title=="Skills") { %>
+                  style="color: #002F7B"
+                <% } else { %>
+                  style="color: #afeb8f"
+                <% } %>
               ></i>
               Technical Skills
             </a>

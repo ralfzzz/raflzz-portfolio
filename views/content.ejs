@@ -1,0 +1,46 @@
+<section class="content">
+    <div class="container-fluid py-3">
+      <header>
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+          <h1 class="display-4 fw-bold text-body-emphasis text-white">Rifqi's <%= title %></h1>
+        </div>
+      </header>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 px-md-5">
+          <% content['data'].forEach(data => { %>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-light"><%= data.periode %></h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">
+                  <%= data.title %>
+                </h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <% if (data.position) { %>
+                    <li> <%= data.position %>  </li>
+                  <% } %>
+                  <% if (data.project) { %>
+                  <li><strong style="color: #AFEB8F">Project:</strong> <%= data.project %> </li>
+                  <% } %>
+                  <% if (data.topics) { %>
+                    <li><strong style="color: #AFEB8F">Topics:</strong> <%= data.topics %> </li>
+                  <% } %>
+                  <% if (data.activity) { %>
+                    <li><strong style="color: #AFEB8F">What i do:</strong> <%= data.activity %> </li>
+                  <% } %>
+                  <% if (data.skills) { %>
+                    <li><strong style="color: #AFEB8F;">Skills Used:</strong> <%= data.skills %> </li>
+                  <% } %>
+                  <% if (data.link) { %>
+                    <li><strong style="color: #AFEB8F;">For more:</strong> <a href="<%= data.link %>" target="_blank"> <i class="fa-solid fa-square-arrow-up-right fa-xl"></i></a></li>
+                  <% } %>
+                </ul>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+
+          
+        </div>
+  </section>
