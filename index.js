@@ -95,7 +95,7 @@ app.get('/:tab', async (req,res)=>{
     const data = await Portfolio.findOne({category: category}).catch(error => {
         console.log(error);
     });
-    console.log(data)
+    // console.log(data)
     if (data!==null) {
         res.render("main/main.ejs",{
             year: year,
