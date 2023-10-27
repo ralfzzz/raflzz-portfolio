@@ -32,6 +32,9 @@
                   <% if (data.skills) { %>
                     <li><strong style="color: #AFEB8F;">Skills Used:</strong> <%= data.skills %> </li>
                   <% } %>
+                  <% if (data.website) { %>
+                    <li><strong style="color: #AFEB8F;">Related Portfolio:</strong> <a href="<%= data.website %>" target="_blank"> <i class="fa-solid fa-square-arrow-up-right fa-xl"></i></a></li>
+                  <% } %>
                   <% if (data.link) { %>
                     <li><strong style="color: #AFEB8F;">For more:</strong> <a href="<%= data.link %>" target="_blank"> <i class="fa-solid fa-square-arrow-up-right fa-xl"></i></a></li>
                   <% } %>

@@ -77,6 +77,9 @@ const dataSchema = new mongoose.Schema({
       },
       link:{
         type: String,
+      },
+      website:{
+        type: String,
       }
 });
 
