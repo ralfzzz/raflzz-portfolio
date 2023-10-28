@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 require('dotenv').config();
 const _ = require("lodash");
 const helmet = require("helmet");
+const routes = require('./routers/routers'); 
 
 const app = express();
 const port = process.env.PORT;
@@ -21,10 +22,10 @@ app.use(helmet({
       },
 }));
 
-const d = new Date();
-let year = d.getFullYear();
+// ROUTES
+app.use(routes);
 
-
+// START
 mongoose.connect(process.env.URI_MONGODB) // if error it will throw async error
     .then(() => { // if all is ok we will be here
         return app.listen(port,() => {
@@ -36,81 +37,6 @@ mongoose.connect(process.env.URI_MONGODB) // if error it will throw async error
         process.exit(1);
     });
 
-app.get('/',(req,res)=>{
-    res.render("main/main.ejs",{
-        year: year,
-        title: "About Me",
-        page: '../index.ejs'
-    })
-})
 
-app.get('/skills',(req,res)=>{
-  res.render("main/main.ejs",{
-      year: year,
-      title: "Skills",
-      page: '../skills.ejs'
-  })
-})
-
-// MONGODB
-const dataSchema = new mongoose.Schema({
-    periode: {
-        type: String,
-      },
-      title: {
-        type: String,
-      },
-      position: {
-        type: String,
-      },
-      project: {
-        type: String,
-      }, 
-      topics: {
-        type: String,
-      },
-      skills: {
-        type: String,
-      },
-      activity: {
-        type: String,
-      },
-      link:{
-        type: String,
-      },
-      website:{
-        type: String,
-      }
-});
-
-const portfolioSchema = new mongoose.Schema({
-    category: {
-        type: String,
-      },
-      data: [dataSchema]
-});
-const Portfolio = mongoose.model('portfolio', portfolioSchema);
-
-app.get('/:tab', async (req,res)=>{
-    let tab = req.params.tab;
-    let category = _.capitalize(tab);
-
-    const data = await Portfolio.findOne({category: category}).catch(error => {
-        console.log(error);
-    });
-    // console.log(data)
-    if (data!==null) {
-        res.render("main/main.ejs",{
-            year: year,
-            title: category,
-            page: '../content.ejs',
-            content: data
-        })
-    } else if(data==null && category=="Skills") {
-      res.redirect("/skills");
-    } else {
-      res.redirect("/");
-    }
-})
 
 
